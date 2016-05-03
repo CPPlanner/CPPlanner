@@ -1,0 +1,58 @@
+<html ng-app="classApp" ng-cloak>
+  <head>
+    <meta charset="utf-8">
+    <title>Json Example</title>
+
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  </head>
+
+
+<body ng-controller = "ClassCtrl">
+
+  <div id="container">
+    <div class="question">
+      <h1>Choose the courses you have taken:</h1>
+    </div>
+
+
+    <div class="btnList" ng-repeat = "x in names" ng-click="toggleActive(x)" ng-class="{active:x.active}">
+
+        {{x.Name}}
+
+    </div>
+
+    <button ng-click="addCourses()">Add Classes</button>
+
+     <h2>Courses you have taken: </h2>
+
+    <div class="taken" ng-repeat="y in studentClasses" ng-click="toggleActive(y)" ng-class="{active:y.active}">
+         {{y}}
+      </div>
+      <button ng-click="removeCourses()" ng-show="studentClasses != '' ">Remove Classes</button>
+
+
+
+
+  </div>
+
+
+
+
+<!-- Angular Material requires Angular.js Libraries -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+<script src="Javascript/scripts.js"></script>
+
+</body>
+</html>
+
+
+<!--https://calpolycourses.firebaseio.com-->
