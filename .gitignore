@@ -16,4 +16,4 @@
 project.lock.json
 
 # Bower libraries
-~/wwwroot/lib/
+/src/**/wwwroot/lib/
