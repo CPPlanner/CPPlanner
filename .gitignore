@@ -15,3 +15,5 @@
 # DNX
 project.lock.json
 
+# Bower libraries
+wwwroot/lib/
