@@ -1,0 +1,19 @@
+﻿@{ 
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <h1>Index View</h1>
+    <p>This is the main page that users see (whether logged-in or not)</p>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <!--<button class="btn btn-sm btn-success">Go to Home</button>-->
+        <a asp-controller="App" asp-action="Home">Go to Home</a>
+    }
+    else
+    {
+        <!--<button asp-controller="App" asp-action="Home" class="btn btn-sm btn-success">Log in</button>-->
+        <a asp-controller="Auth" asp-action="Login">Login</a>
+    }
+</div>

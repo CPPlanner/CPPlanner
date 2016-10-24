@@ -1,0 +1,6 @@
+{
+  "ConnectionStrings": {
+    "CPPlannerContextConnection": "Server=(localdb)\\MSSQLLocalDb;Database=CPPlannerDb;Trusted_Connection=true;MultipleActiveResultSets=true;"
+  }
+
+}
