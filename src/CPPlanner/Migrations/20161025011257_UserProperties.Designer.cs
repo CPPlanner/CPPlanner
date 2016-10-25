@@ -8,9 +8,10 @@ using CPPlanner.Models;
 namespace CPPlanner.Migrations
 {
     [DbContext(typeof(CPPlannerContext))]
-    partial class CPPlannerContextModelSnapshot : ModelSnapshot
+    [Migration("20161025011257_UserProperties")]
+    partial class UserProperties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")

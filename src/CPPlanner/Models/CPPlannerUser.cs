@@ -9,5 +9,7 @@ namespace CPPlanner.Models
 {
     public class CPPlannerUser : IdentityUser
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }
