@@ -6,6 +6,7 @@ namespace CPPlanner.Models
 {
     public interface ICPPlannerRepository
     {
+        IEnumerable<Catalog> GetCatalogs(string username);
         Task<bool> SaveChangesAsync();
     }
 }

@@ -18,6 +18,10 @@ namespace CPPlanner.Models
             _config = config;
         }
 
+        public DbSet<Catalog> Catalogs { get; set; }
+        public DbSet<Module> Modules { get; set; }
+        public DbSet<Course> Courses { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);

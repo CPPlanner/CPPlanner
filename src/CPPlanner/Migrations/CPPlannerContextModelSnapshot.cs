@@ -16,6 +16,50 @@ namespace CPPlanner.Migrations
                 .HasAnnotation("ProductVersion", "1.0.1")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("CPPlanner.Models.Catalog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Major");
+
+                    b.Property<int>("MinUnitsReq");
+
+                    b.Property<string>("Subplan");
+
+                    b.Property<string>("UserName");
+
+                    b.Property<int>("Year");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Catalogs");
+                });
+
+            modelBuilder.Entity("CPPlanner.Models.Course", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("GEEquivalent");
+
+                    b.Property<bool>("IsGE");
+
+                    b.Property<int?>("ModuleId");
+
+                    b.Property<string>("Number");
+
+                    b.Property<string>("Title");
+
+                    b.Property<int>("Units");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ModuleId");
+
+                    b.ToTable("Courses");
+                });
+
             modelBuilder.Entity("CPPlanner.Models.CPPlannerUser", b =>
                 {
                     b.Property<string>("Id");
@@ -63,6 +107,24 @@ namespace CPPlanner.Migrations
                         .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("CPPlanner.Models.Module", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("CatalogId");
+
+                    b.Property<string>("Title");
+
+                    b.Property<int>("Units");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CatalogId");
+
+                    b.ToTable("Modules");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole", b =>
@@ -170,6 +232,20 @@ namespace CPPlanner.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("CPPlanner.Models.Course", b =>
+                {
+                    b.HasOne("CPPlanner.Models.Module")
+                        .WithMany("Courses")
+                        .HasForeignKey("ModuleId");
+                });
+
+            modelBuilder.Entity("CPPlanner.Models.Module", b =>
+                {
+                    b.HasOne("CPPlanner.Models.Catalog")
+                        .WithMany("Modules")
+                        .HasForeignKey("CatalogId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
