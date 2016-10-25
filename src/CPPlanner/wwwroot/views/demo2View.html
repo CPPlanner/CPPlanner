@@ -1,0 +1,20 @@
+﻿<div>
+    <h3>This is the second angular view, demo2View.html</h3>
+    <p>Data below comes after being an input param from previous view:</p>
+    {{ vm.thisName }}
+
+    <p>Data below comes from server:</p>
+    <div class="alert alert-danger" ng-show="vm.errorMessage">{{ vm.errorMessage }}</div>
+    <table class="table table-responsive table-striped">
+        <tr>
+            <th>Major</th>
+            <th>Year</th>
+            <th>Username</th>
+        </tr>
+        <tr ng-repeat="c in vm.catalogs">
+            <td>{{ c.major }}</td>
+            <td>{{ c.year }}</td>
+            <td>{{ c.userName }}</td>
+        </tr>
+    </table>
+</div>

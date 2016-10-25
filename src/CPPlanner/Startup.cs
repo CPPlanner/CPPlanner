@@ -80,7 +80,7 @@ namespace CPPlanner
                 config.MapRoute(
                     name: "Default",
                     template: "{controller}/{action}/{id?}",
-                    defaults: new { controller = "Auth", action = "Login" }
+                    defaults: new { controller = "App", action = "Index" }
                 );
             });
 
