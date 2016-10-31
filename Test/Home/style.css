@@ -1,0 +1,83 @@
+.home        {
+  bottom:0;
+  padding-top:200px;
+  position:absolute;
+  text-align:center;
+  top:0;
+  width:100%;
+}
+
+.page h1    { font-size:60px; }
+.page a     { margin-top:50px; }
+
+
+/* PAGES specific colors for each page
+============================================================================= */
+.home      { background:white; color:black; }
+.guide     { background:white; color:black; }
+.planner     { background:white; color:black; }
+
+
+.ng-enter       { z-index: 8888; }
+.ng-leave       { z-index: 9999; }
+
+
+/* home -------------------------- */
+.home.ng-enter         { animation: scaleUp 0.5s both ease-in; }
+.home.ng-leave         { transform-origin: 0% 0%; }
+
+/* guide ------------------------ */
+.guide.ng-enter        { animation: scaleUp 0.5s both ease-in; }
+.guide.ng-leave        { transform-origin: 0% 0%;  }
+
+/* planner ------------------------ */
+.planner.ng-enter  { animation: scaleUp 0.5s both ease-in; }
+.planner.ng-leave  { transform-origin: 0% 0%;  }
+.planner           {margin-left: 10px;}
+.planner h6.title  {margin-left: 10px;}
+.planner div.boxed {border: 2px solid black ;
+                    width: 400px;
+                    height: 190px;}
+
+.planner div.boxed2{border: 2px solid black ;
+                    width: 500px;
+                    height: 800px; }
+
+.planner div.boxed3{border: 2px solid black ;
+                    width: 450px;
+                    height: 150px;
+                    margin-top: 5px;
+                    margin-left: 10px;}
+
+.planner div.boxed4{border: 2px solid black ;
+                    float:right;
+                    width: 600px;
+                    height: 450px;
+                    margin-top: 30px;
+                    margin-right: 100px;}
+
+.planner div.boxed5{border: 2px solid black ;
+                    float:right;
+                    width: 600px;
+                    height: 500px;
+                    margin-top: 30px;
+                    margin-right: 100px;}
+.planner div.boxed6{border: 2px solid black ;
+                    width: 150px;
+                    height: 200px;
+                    margin-top: 5px;
+                    margin-left: 8px;
+                    margin-right: 40px;
+                    clear: right;
+                    float: left;
+                    margin-bottom: 5px;}
+/* ANIMATIONS
+============================================================================= */
+
+
+/* entering animations --------------------------------------- */
+@keyframes scaleUp {
+  from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+
+

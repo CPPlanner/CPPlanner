@@ -1,0 +1,46 @@
+<body>
+    <h1 style="margin-left: 12px; margin-top: 21px;">{{message}}</h1>
+    <h1>
+
+    </h1>
+    <h2>Courses Taken</h2>
+    <div style="border: 1px solid blue;"></div>
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td>Class</td>
+                <td>Description</td>
+                <td>Units</td>
+            </tr>
+            <tr ng-repeat="item in items">
+                <td>{{item.Product}}</td>
+                <td>{{item.Desc}}</td>
+                <td>{{item.Units}}</td>
+                <td>
+                    <button type="button" ng-click="addToCart(item)">Add to Cart</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" ng-click="resetClasses()">Reset</button>
+
+
+    <h2 style="margin-top: 21px; width: 991px; height: 26px;">My courses</h2>
+    <div style="border: 1px solid blue;"></div>
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td>Class</td>
+                <td>Description</td>
+                <td>Units</td>
+            </tr>
+            <tr ng-repeat="item in myCartItem">
+                <td>{{item.Product}}</td>
+                <td>{{item.Desc}}</td>
+                <td>{{item.Units}}</td>
+              <td><button type="button" ng-click="submitClasses()">Submit</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
