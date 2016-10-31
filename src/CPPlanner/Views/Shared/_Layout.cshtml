@@ -5,6 +5,13 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/styles.css">
+
 </head>
 <body>
 
@@ -12,10 +19,10 @@
         @if (User.Identity.IsAuthenticated)
         {
             <span id="username">@User.Identity.Name</span>
-        }
-        <ul class="nav">
-            <li><a asp-controller="Auth" asp-action="Logout">Logout</a></li>
-        </ul>
+            <ul class="nav">
+                <li><a asp-controller="Auth" asp-action="Logout">Logout</a></li>
+            </ul>
+        }        
     </div>
 
     <div id="wrapper">
@@ -24,11 +31,11 @@
                 @RenderBody()
             </div>
         </div>
-        <div id="footer" class="container-fluid">
+        <!--<div id="footer" class="container-fluid">
             <div class="nav navbar-inverse navbar-fixed-bottom">
                 <h4 class="text-center text-info">&copy; 2016 CPPlanner</h4>
             </div>
-        </div>
+        </div>-->
     </div>
 
     <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>

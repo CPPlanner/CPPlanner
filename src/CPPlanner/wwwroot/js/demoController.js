@@ -5,16 +5,17 @@
     angular.module("app-demo")
         .controller("demoController", demoController);
 
-    function demoController() {
-        var vm = this;
+    function demoController($scope, myService) {
 
-        vm.objects = [{
-            name: "Cesar",
-            created: new Date()
-        }, {
-            name: "Nelly",
-            created: new Date()
-        }];
-    }
-
-})();
+            var vm = this;
+    
+            vm.objects = [{
+                name: "Cesar",
+                created: new Date()
+            }, {
+                name: "Nelly",
+                created: new Date()
+            }];
+        
+        }
+    })();
