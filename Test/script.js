@@ -1,21 +1,34 @@
-// Code goes here
+var app = angular.module("app", ['dndLists']);
 
-angular.module("demo", ['dndLists']).controller("SimpleDemoController", function ($scope) {
+app.factory('myService', function($http) {
+  var myService = {
+    async: function() {
+      var promise = $http.get('test.json').then(function (response) {
+        console.log(response);
+        return response.data;
+      });
+      return promise;
+    }
+  };
+  return myService;
+});
+
+app.controller('MainCtrl', function(myService,$scope) {
 
   $scope.models = {
     selected: null,
-    lists: { "A": [], "B": [] }
-  };
-
-  // Generate initial model
-  for (var i = 1; i <= 3; ++i) {
-    $scope.models.lists.A.push({ label: "Item A" + i });
-    $scope.models.lists.B.push({ label: "Item B" + i });
+    lists: {"Added": [], "Classes": []}
   }
 
-  // Model to JSON for demo purpose
-  $scope.$watch('models', function (model) {
-    $scope.modelAsJson = angular.toJson(model, true);
-  }, true);
 
+  myService.async().then(function(d) {
+    $scope.data = d;
+    angular.forEach($scope.data,function(value,key){
+      $scope.models.lists.Classes.push(value);
+    });
+
+    console.log($scope.models.lists.Classes[0]);
+
+  });
 });
+

@@ -1,39 +1,55 @@
 <!DOCTYPE html>
-<html ng-app="demo">
-  <head lang="en">
-    <meta charset="utf-8">
-    <title>Drag & Drop Demo</title>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-drag-and-drop-lists/1.4.0/angular-drag-and-drop-lists.min.js"></script>
-    <script src="script.js"></script>
-    <link href="styles.css" rel="stylesheet" />
+  <!-- load bootstrap and fontawesome via CDN -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <!-- load angular and angular route via CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-drag-and-drop-lists/1.4.0/angular-drag-and-drop-lists.min.js"></script>
+  <script src="script.js"></script>
   </head>
-  <body class="simpleDemo" ng-controller="SimpleDemoController">
-    <ul dnd-list="models.lists.A">
-     <h1>Table 1</h1>
-      <li ng-repeat="item in models.lists.A"
-          dnd-draggable="item"
-          dnd-moved="models.lists.A.splice($index, 1)"
-          dnd-effect-allowed="move"
-          dnd-selected="models.selected = item"
-          ng-class="{'selected': models.selected === item}">
-        {{item.label}}
-      </li>
-    </ul>
 
-<!--
-    <ul dnd-list="models.lists.B">
-      <h1>Table 2</h1>
-      <li ng-repeat="item in models.lists.B"
-          dnd-draggable="item"
-          dnd-moved="models.lists.B.splice($index, 1)"
-          dnd-effect-allowed="move"
-          dnd-selected="models.selected = item"
-          ng-class="{'selected': models.selected === item}">
-        {{item.label}}
-      </li>
-    </ul>
--->
-  </body>
+  <body>
+    <div ng-controller="MainCtrl" class="simpleDemo">
+    <table>
+     <td id="line-content">
+      <ul dnd-list = "models.lists.Classes[0]">
+       <h2>Classes</h2>
+        <li ng-repeat="item in models.lists.Classes[0]"
+             dnd-draggable="item"
+             dnd-moved="models.lists.Classes[0].splice($index, 1)"
+             dnd-effect-allowed="move"
+             dnd-selected="models.selected = item"
+             ng-class="{'selected': data.selected === item}">
+          {{item.title}}
+        </li>
+      </ul>
+      </td>
+      </table>
+
+    <table>
+      <td id="line-content">
+      <ul dnd-list = "models.lists.Added">
+        <h2>Classes Added</h2>
+        <li ng-repeat="item in models.lists.Added"
+              dnd-draggable = "item"
+              dnd-moved = "models.lists.Added.splice($index, 1)"
+              dnd-effect-allowed="move"
+              dnd-selected = "models.selected = item"
+              ng-class="{'selected': models.selected === item}">
+                {{item.Name}}
+              </li>
+      </ul>
+      </td>
+      </table>
+    </div>
+</body>
 </html>
