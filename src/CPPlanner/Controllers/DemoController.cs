@@ -7,14 +7,9 @@ using System.Threading.Tasks;
 
 namespace CPPlanner.Controllers
 {
-    public class HomeController : Controller
+    public class DemoController : Controller
     {
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Test()
         {
             return View();
         }

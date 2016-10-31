@@ -8,12 +8,11 @@
 
     @if (User.Identity.IsAuthenticated)
     {
-        <!--<button class="btn btn-sm btn-success">Go to Home</button>-->
-        <a asp-controller="App" asp-action="Home">Go to Home</a>
+        <button onclick="location.href='@Url.Action("Home","App")'" class="btn btn-sm btn-success">Go to Home</button>
     }
     else
     {
-        <!--<button asp-controller="App" asp-action="Home" class="btn btn-sm btn-success">Log in</button>-->
-        <a asp-controller="Auth" asp-action="Login">Login</a>
+        <button onclick="location.href='@Url.Action("Login","Auth")'" class="btn btn-sm btn-success">Log in</button>
+        <button onclick="location.href='@Url.Action("Register","Auth")'" class="btn btn-sm btn-success">Register</button>
     }
 </div>
