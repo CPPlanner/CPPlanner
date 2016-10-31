@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>Drag & Drop Demo</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-drag-and-drop-lists/1.4.0/angular-drag-and-drop-lists.min.js"></script>
+    <script src="script.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body class="simpleDemo" ng-controller="SimpleDemoController">
+    <ul dnd-list="models.lists.A">
+     <h1>Table 1</h1>
+      <li ng-repeat="item in models.lists.A"
+          dnd-draggable="item"
+          dnd-moved="models.lists.A.splice($index, 1)"
+          dnd-effect-allowed="move"
+          dnd-selected="models.selected = item"
+          ng-class="{'selected': models.selected === item}">
+        {{item.label}}
+      </li>
+    </ul>
+
+<!--
+    <ul dnd-list="models.lists.B">
+      <h1>Table 2</h1>
+      <li ng-repeat="item in models.lists.B"
+          dnd-draggable="item"
+          dnd-moved="models.lists.B.splice($index, 1)"
+          dnd-effect-allowed="move"
+          dnd-selected="models.selected = item"
+          ng-class="{'selected': models.selected === item}">
+        {{item.label}}
+      </li>
+    </ul>
+-->
+  </body>
+</html>
