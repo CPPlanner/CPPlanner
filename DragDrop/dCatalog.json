@@ -1,0 +1,280 @@
+[
+  {
+    "id": 1,
+    "userName": "username",
+    "year": 2016,
+    "major": "Computer Science",
+    "subplan": null,
+    "minUnitsReq": 180,
+    "modules": [
+      {
+        "id": 1,
+        "title": "General Education Requirements",
+        "units": 68,
+        "courses": [
+          {
+            "id": 1,
+            "number": "A1",
+            "title": "Oral Communication",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 12,
+            "number": "E",
+            "title": "Lifelong Understanding and Self-development",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 13,
+            "number": "D4",
+            "title": "Social Science Synthesis",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 14,
+            "number": "D3",
+            "title": "Sociology, Anthropology, Ethnic and Gender Studies",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 15,
+            "number": "D2",
+            "title": "History, Economics, and Political Science",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 16,
+            "number": "D1b",
+            "title": "Introduction to American Government",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 17,
+            "number": "D1a",
+            "title": "United States History",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 18,
+            "number": "C4",
+            "title": "Humanitites Synthesis",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 19,
+            "number": "C3",
+            "title": "Literature and Foreign Languages",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 20,
+            "number": "C2",
+            "title": "Philosophy and Civilization",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 21,
+            "number": "C1",
+            "title": "Visual and Performing Arts",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 22,
+            "number": "B5",
+            "title": "Science and Technology Synthesis",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 23,
+            "number": "B4",
+            "title": "Mathematics/Quantitative Reasoning",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 24,
+            "number": "B3",
+            "title": "Laboratory Activity",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 25,
+            "number": "B2",
+            "title": "Biological Science",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 26,
+            "number": "B1",
+            "title": "Physical Science",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 27,
+            "number": "A3",
+            "title": "Critical Thinking",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 28,
+            "number": "A2",
+            "title": "Written Communication",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Required Core Courses for Major",
+        "units": 62,
+        "courses": [
+          {
+            "id": 8,
+            "number": "CS 210",
+            "title": "Computer Logic",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 9,
+            "number": "CS 141",
+            "title": "Introduction to Programming and Problem-Solving",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 10,
+            "number": "CS 140",
+            "title": "Introduction to Computer Science",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 11,
+            "number": "CS 130",
+            "title": "Discrete Structures",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Elective Core Courses",
+        "units": 23,
+        "courses": [
+          {
+            "id": 4,
+            "number": "CS 356",
+            "title": "Object-Oriented Design and Programming",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 5,
+            "number": "CS 352",
+            "title": "Symbolic Programming",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 6,
+            "number": "CS 260",
+            "title": "Unix and Scripting",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 7,
+            "number": "CS 245",
+            "title": "Programming Graphical User Interfaces",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Required Support Courses",
+        "units": 43,
+        "courses": [
+          {
+            "id": 2,
+            "number": "BIO 111L",
+            "title": "Life Science",
+            "units": 1,
+            "isGE": true,
+            "geEquivalent": "B2, B3"
+          },
+          {
+            "id": 3,
+            "number": "BIO 110",
+            "title": "Life Science",
+            "units": 3,
+            "isGE": true,
+            "geEquivalent": "B2, B3"
+          },
+          {
+            "id": 29,
+            "number": "CS 375",
+            "title": "Computers and Society",
+            "units": 4,
+            "isGE": true,
+            "geEquivalent": "B5 or D4"
+          },
+          {
+            "id": 30,
+            "number": "MAT 114",
+            "title": "Analytic Geometry and Calculus I",
+            "units": 4,
+            "isGE": true,
+            "geEquivalent": "B4"
+          }
+        ]
+      }
+    ]
+  }
+]
