@@ -4,12 +4,18 @@
 @section Scripts {
     <script src="~/lib/angular/angular.min.js"></script>
     <script src="~/lib/angular-route/angular-route.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+    <script src="~/js/angular-drag-and-drop-lists.js"></script>   
     <script src="~/js/app-demo.js"></script>
-    <script src="~/js/demoController.js"></script>
-    <script src="~/js/demo2Controller.js"></script>
-}
-<div class="row" ng-app="app-demo">
+    <script src="~/js/displayController.js"></script>
 
+    <!--test-->
+    <script src="~/js/demo2Controller.js"></script>
+    <script src="~/js/demoController.js"></script>
+}
+
+<div class="row" ng-app="app-demo">
+    <h1>Demo Index</h1>
     <div ng-view></div>
 
 </div>

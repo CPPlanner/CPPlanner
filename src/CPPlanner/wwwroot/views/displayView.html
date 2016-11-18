@@ -1,0 +1,34 @@
+﻿
+<div class="simpleDemo">
+    <table>
+     <td id="line-content">
+      <ul dnd-list = "models.lists.Classes[0]">
+       <h2>Classes</h2>
+        <li ng-repeat="item in models.lists.Classes[0]"
+             dnd-draggable="item"
+             dnd-moved="models.lists.Classes[0].splice($index, 1)"
+             dnd-effect-allowed="move"
+             dnd-selected="models.selected = item"
+             ng-class="{'selected': data.selected === item}">
+          {{item.title}}
+        </li>
+      </ul>
+      </td>
+      </table>
+
+    <table>
+      <td id="line-content">
+      <ul dnd-list = "models.lists.Added">
+        <h2>Classes Added</h2>
+        <li ng-repeat="item in models.lists.Added"
+              dnd-draggable = "item"
+              dnd-moved = "models.lists.Added.splice($index, 1)"
+              dnd-effect-allowed="move"
+              dnd-selected = "models.selected = item"
+              ng-class="{'selected': models.selected === item}">
+                {{item.Name}}
+              </li>
+      </ul>
+      </td>
+      </table>
+    </div>
