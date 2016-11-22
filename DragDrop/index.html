@@ -2,86 +2,77 @@
 <html lang="en" ng-app="app">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>CPPlanner</title>
 
   <!-- load bootstrap and fontawesome via CDN -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
   <!-- load angular and angular route via CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-drag-and-drop-lists/1.4.0/angular-drag-and-drop-lists.min.js"></script>
-  <script src="script.js"></script>
-  </head>
+  <script src="js/script.js"></script>
+</head>
 
-  <body>
+<body>
     <div ng-controller="MainCtrl" class="simpleDemo">
-    <table>
-     <td id="line-content">
-      <ul dnd-list = "models.lists.Classes[0].modules[0].courses">
-       <h2>GE-Requirement</h2>
-        <li ng-repeat="item in models.lists.Classes[0].modules[0].courses"
-             dnd-draggable="item"
-             dnd-moved="models.lists.Classes[0].modules[0].courses.splice($index, 1)"
-             dnd-effect-allowed="move"
-             dnd-selected="models.selected = item"
-             ng-class="{'selected': models.selected === item}">
-          {{item.title}}
-        </li>
-      </ul>
-      </td>
-      </table>
+    
+		<div id="wrapper">
+		
+			<div id="catalog-bank">
+			    <div id="course-info">
+					<h6>Course Information</h6>
+				    <div ng-bind="courseNumber"></div>
+				    <div ng-bind="courseTitle"></div>               
+				    <div ng-bind="courseUnits"></div>                
+			    </div>
 
-      <table>
-        <td id="line-content">
-          <ul dnd-list = "models.lists.Classes[0].modules[1].courses">
-            <h2>General Education Requirements</h2>
-            <li ng-repeat="item in models.lists.Classes[0].modules[1].courses"
-                dnd-draggable="item"
-                dnd-moved="models.lists.Classes[0].modules[1].courses.splice($index, 1)"
-                dnd-effect-allowed="move"
-                dnd-selected="models.selected = item"
-                ng-class="{'selected': models.selected === item}">
-              {{item.title}}
-            </li>
-          </ul>
-        </td>
-      </table>
+			    <div id="course-bank">
+				    <div ng-repeat="module in models.lists.Classes[0].modules">
+					    <table class="module">
+						    <td>
+								<ul dnd-list = "module.courses">
+									<div ng-bind="module.title"></div>
+									<li class="course"
+										ng-repeat="item in module.courses"
+										dnd-draggable="item"
+										dnd-moved="module.courses.splice($index, 1)"
+										dnd-effect-allowed="move"
+										dnd-selected="models.selected = item"
+										ng-class="{'selected': models.selected === item}">
+											<div class="clickPointer" ng-click="displayInfo(item)" ng-bind="item.number"></div>
+										</li>
+							    </ul>
+						    </td>
+					    </table>
+				    </div>           
+			    </div>
+			</div>
 
-      <table>
-        <td id="line-content">
-          <ul dnd-list = "models.lists.Classes[0].modules[2].courses">
-            <h2>Required Core Courses for Major</h2>
-            <li ng-repeat="item in models.lists.Classes[0].modules[2].courses"
-                dnd-draggable="item"
-                dnd-moved="models.lists.Classes[0].modules[2].courses.splice($index, 1)"
-                dnd-effect-allowed="move"
-                dnd-selected="models.selected = item"
-                ng-class="{'selected': models.selected === item}">
-              {{item.title}}
-            </li>
-          </ul>
-        </td>
-      </table>
-
-    <table>
-      <td id="line-content">
-      <ul dnd-list = "models.lists.Added">
-        <h2>Classes Added</h2>
-        <li ng-repeat="item in models.lists.Added"
-              dnd-draggable = "item"
-              dnd-moved = "models.lists.Added.splice($index, 1)"
-              dnd-effect-allowed="move"
-              dnd-selected = "models.selected = item"
-              ng-class="{'selected': models.selected === item}">
-                {{item.title}}
-              </li>
-      </ul>
-      </td>
-      </table>
+			<div id="schedule-bank">
+				<table class="module">
+					<td>
+						<ul dnd-list = "models.lists.Added">
+							<h6>Classes Added</h6>
+							<li class="course"
+							  ng-repeat="item in models.lists.Added"
+							  dnd-draggable = "item"
+							  dnd-moved = "models.lists.Added.splice($index, 1)"
+							  dnd-effect-allowed="move"
+							  dnd-selected = "models.selected = item"
+							  ng-class="{'selected': models.selected === item}">
+								<div class="clickPointer" ng-click="displayInfo(item)" ng-bind="item.number"></div>
+							</li>
+						</ul>
+					</td>
+			    </table>
+			</div>
+		
+		</div>
+		
     </div>
 </body>
 </html>
