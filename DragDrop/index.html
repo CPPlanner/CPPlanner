@@ -14,6 +14,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-drag-and-drop-lists/1.4.0/angular-drag-and-drop-lists.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
   <script src="js/script.js"></script>
 </head>
 
@@ -25,13 +26,13 @@
 			<div id="catalog-bank">
 			    <div id="course-info">
 					<h6>Course Information</h6>
-				    <div ng-bind="courseNumber"></div>
-				    <div ng-bind="courseTitle"></div>               
-				    <div ng-bind="courseUnits"></div>                
+				    Number: {{courseNumber}} <br/>
+				    Title: {{courseTitle}} <br/>          
+				    Units: {{courseUnits}}                
 			    </div>
 
 			    <div id="course-bank">
-				    <div ng-repeat="module in models.lists.Classes[0].modules">
+				    <div ng-repeat="module in models.catalogList.Classes[0].modules">
 					    <table class="module">
 						    <td>
 								<ul dnd-list = "module.courses">
@@ -44,7 +45,7 @@
 										dnd-selected="models.selected = item"
 										ng-class="{'selected': models.selected === item}">
 											<div class="clickPointer" ng-click="displayInfo(item)" ng-bind="item.number"></div>
-										</li>
+								    </li>
 							    </ul>
 						    </td>
 					    </table>
@@ -52,25 +53,29 @@
 			    </div>
 			</div>
 
-			<div id="schedule-bank">
-				<table class="module">
-					<td>
-						<ul dnd-list = "models.lists.Added">
-							<h6>Classes Added</h6>
-							<li class="course"
-							  ng-repeat="item in models.lists.Added"
-							  dnd-draggable = "item"
-							  dnd-moved = "models.lists.Added.splice($index, 1)"
-							  dnd-effect-allowed="move"
-							  dnd-selected = "models.selected = item"
-							  ng-class="{'selected': models.selected === item}">
-								<div class="clickPointer" ng-click="displayInfo(item)" ng-bind="item.number"></div>
-							</li>
-						</ul>
-					</td>
-			    </table>
+			<div id="schedule-bank">  
+               <div ng-repeat="added in models.lists">
+					    <table class="module">
+						    <td>
+								<ul dnd-list = "added">
+									<h6>Semester</h6>
+                                   <div ng-bind="units(added)"></div>
+                
+									<li class="course"
+										ng-repeat="item in added"
+										dnd-draggable="item"
+										dnd-moved="added.splice($index, 1)"
+										dnd-effect-allowed="move"
+										dnd-selected="models.selected = item"
+										ng-class="{'selected': models.selected === item}">
+											<div class="clickPointer" ng-click="displayInfo(item)" ng-bind="item.number"></div>
+								    </li>
+							    </ul>
+						    </td>
+					    </table>
+				</div>              
 			</div>
-		
+			<button ng-click="addNew()">Add</button>
 		</div>
 		
     </div>
