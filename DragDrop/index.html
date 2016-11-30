@@ -18,66 +18,67 @@
   <script src="js/script.js"></script>
 </head>
 
-<body>
-    <div ng-controller="MainCtrl" class="simpleDemo">
-    
-		<div id="wrapper">
-		
-			<div id="catalog-bank">
-			    <div id="course-info">
-					<h6>Course Information</h6>
-				    Number: {{courseNumber}} <br/>
-				    Title: {{courseTitle}} <br/>          
-				    Units: {{courseUnits}}                
-			    </div>
+  <body class="container">
+    <div ng-controller="MainCtrl" class="panel panel-default">
 
-			    <div id="course-bank">
-				    <div ng-repeat="module in models.catalogList.Classes[0].modules">
-					    <table class="module">
-						    <td>
-								<ul dnd-list = "module.courses">
-									<div ng-bind="module.title"></div>
-									<li class="course"
-										ng-repeat="item in module.courses"
-										dnd-draggable="item"
-										dnd-moved="module.courses.splice($index, 1)"
-										dnd-effect-allowed="move"
-										dnd-selected="models.selected = item"
-										ng-class="{'selected': models.selected === item}">
-											<div class="clickPointer" ng-click="displayInfo(item)" ng-bind="item.number"></div>
-								    </li>
-							    </ul>
-						    </td>
-					    </table>
-				    </div>           
-			    </div>
-			</div>
+    <div id="wrapper">
 
-			<div id="schedule-bank">  
+      <div id="catalog-bank" class="panel-heading">
+        <div id="course-info" >
+            <h6 class="panel-title">Course Information</h6>
+            Number: {{courseNumber}} <br/>
+            Title: {{courseTitle}} <br/>
+            Units: {{courseUnits}}
+          </div>
+
+          <div id="course-bank" class="panel-body">
+            <div ng-repeat="module in models.catalogList.Classes[0].modules">
+              <table class="module">
+                <td>
+                <ul dnd-list = "module.courses" class="list-group">
+                  <div ng-bind="module.title"></div>
+                  <li id="course" class="list-group-item"
+                    ng-repeat="item in module.courses"
+                    dnd-draggable="item"
+                    dnd-moved="module.courses.splice($index, 1)"
+                    dnd-effect-allowed="move"
+                    dnd-selected="models.selected = item"
+                    ng-class="{'selected': models.selected === item}">
+                      <div class="clickPointer" ng-click="displayInfo(item)" ng-bind="item.number"></div>
+                    </li>
+                  </ul>
+                </td>
+              </table>
+            </div>
+          </div>
+      </div>
+
+      <div id="schedule-bank" class="panel-heading">
                <div ng-repeat="added in models.lists">
-					    <table class="module">
-						    <td>
-								<ul dnd-list = "added">
-									<h6>Semester</h6>
-                                   <div ng-bind="units(added)"></div>
-                
-									<li class="course"
-										ng-repeat="item in added"
-										dnd-draggable="item"
-										dnd-moved="added.splice($index, 1)"
-										dnd-effect-allowed="move"
-										dnd-selected="models.selected = item"
-										ng-class="{'selected': models.selected === item}">
-											<div class="clickPointer" ng-click="displayInfo(item)" ng-bind="item.number"></div>
-								    </li>
-							    </ul>
-						    </td>
-					    </table>
-				</div>              
-			</div>
-			<button ng-click="addNew()">Add</button>
-		</div>
-		
+              <table class="module">
+                <td>
+                <ul dnd-list = "added">
+                  <h6>Semester</h6>
+                  <li id="course" class="list-group-item"
+                    ng-repeat="item in added"
+                    dnd-draggable="item"
+                    dnd-moved="added.splice($index, 1)"
+                    dnd-effect-allowed="move"
+                    dnd-selected="models.selected = item"
+                    ng-class="{'selected': models.selected === item}">
+                      <div class="clickPointer" ng-click="displayInfo(item)" ng-bind="item.number"></div>
+                    </li>
+
+                  <div class="text-right" ng-bind="units(added)"></div>
+                  </ul>
+                </td>
+              </table>
+        </div>
+      </div>
+      <label class="text-right">Total Units:{{total}}</label>
+      <button class="btn btn-primary center-block" ng-click="addNew()">Add</button>
+    </div>
+
     </div>
 </body>
 </html>
