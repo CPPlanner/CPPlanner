@@ -24,9 +24,7 @@
       <div ng-controller="AppCtrl" layout="column" ng-cloak="">
         <section flex="left">
           <md-sidenav class="md-sidenav-left"
-           md-component-id="left"
-           md-is-locked-open="$mdMedia('gt-md')"
-           md-whiteframe="4">
+           md-component-id="left">
             <md-toolbar class="md-theme-indigo">
               <h1 class="md-toolbar-tools">Menu</h1>
             </md-toolbar>
@@ -34,7 +32,7 @@
               <md-button>Home</md-button>
               <md-button>Planner</md-button>
               <md-button>Devs</md-button>
-              <md-button ng-click="close()" class="md-primary" hide-gt-md="">
+              <md-button ng-click="close()" class="md-primary">
                 Close
               </md-button>
 
@@ -43,7 +41,7 @@
           <md-content>
             <div layout="column" layout-align="top center">
               <div>
-                <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md="">
+                <md-button ng-click="toggleLeft()" class="md-primary">
                   CPPlaner
                 </md-button>
               </div>

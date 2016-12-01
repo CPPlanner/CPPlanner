@@ -1,6 +1,7 @@
 var app = angular.module("app", ['dndLists', 'ngMaterial', 'ngMessages','material.svgAssetsCache'])
 .controller('AppCtrl', function($scope, $timeout, $mdSidenav, $log){
   $scope.toggleLeft = buildDelayedToggler('left');
+//  $scope.toggleRight = buildToggler('right');
 
   function debounce(func, wait, context) {
     var timer;
