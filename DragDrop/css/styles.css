@@ -7,6 +7,20 @@ html, body {
   list-style-type: none;
 }
 
+.container .md-button {
+  padding: 10-px;
+  margin: 0px;
+  min-width: 88px;
+  border-radius: 30px;
+  font-size: 25px;
+  text-align: center;
+  text-transform: none;
+  text-decoration:none;
+  border: none;
+  outline: none;
+}
+
+
 .clickPointer {
     cursor: pointer;
 }
@@ -61,7 +75,10 @@ html, body {
 
 .list-group-item{
   display: inline-block;
+
 }
+
+
 
 
 

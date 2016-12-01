@@ -1,10 +1,55 @@
-var app = angular.module("app", ['dndLists']);
+var app = angular.module("app", ['dndLists', 'ngMaterial', 'ngMessages','material.svgAssetsCache'])
+.controller('AppCtrl', function($scope, $timeout, $mdSidenav, $log){
+  $scope.toggleLeft = buildDelayedToggler('left');
+
+  function debounce(func, wait, context) {
+    var timer;
+
+    return function debounced() {
+      var context = $scope,
+          args = Array.prototype.slice.call(arguments);
+      $timeout.cancel(timer);
+      timer = $timeout(function() {
+        timer = undefined;
+        func.apply(context, args);
+      }, wait || 10);
+    };
+  }
+
+  function buildDelayedToggler(navID) {
+    return debounce(function() {
+      $mdSidenav(navID)
+        .toggle()
+        .then(function () {
+      });
+    }, 200);
+  }
+
+  function buildToggler(navID) {
+    return function() {
+      $mdSidenav(navID)
+        .toggle()
+        .then(function () {
+      });
+    }
+  }
+})
+
+app.controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+  $scope.close = function () {
+    // Component lookup should always be available since we are not using `ng-if`
+    $mdSidenav('left').close()
+      .then(function () {
+    });
+  };
+});
+
 
 app.factory('myService', function($http) {
   var myService = {
     async: function() {
       var promise = $http.get("dCatalog.json").then(function (response) {
-        console.log(response);
+//        console.log(response);
         return response.data;
       });
       return promise;
@@ -12,6 +57,7 @@ app.factory('myService', function($http) {
   };
   return myService;
 });
+
 
 app.controller('MainCtrl', function(myService,$scope) {
 
@@ -55,11 +101,11 @@ app.controller('MainCtrl', function(myService,$scope) {
   };
 
   $scope.getTotalUnits = function() {
-    var sum = 0;
-    $('.module-units').each(function(i, obj) {
-      sum = sum + obj.innerHTML;
-    });
-    $scope.sumUnits += sum;
+//    var sum = 0;
+//    $('.module-units').each(function(i, obj) {
+//      sum = sum + obj.innerHTML;
+//    });
+//    $scope.sumUnits += sum;
   };
 
 
@@ -67,18 +113,6 @@ app.controller('MainCtrl', function(myService,$scope) {
 
 
     $scope.units = function(array) {
-       // console.log(array);
-
-        /*var sum = 0;
-        $scope.sum = 0;
-        console.log(sum);
-        if(array)
-        {
-            for(var i = 0; i < array.length; i++){
-                   sum = sum + array[i].units;
-            }
-        }
-        $scope.sum = sum;*/
 
         var sum = 0;
 
@@ -91,16 +125,5 @@ app.controller('MainCtrl', function(myService,$scope) {
         }
         return sum;
     };
-
-  // Adding new divs
-   /*$(function() {
-      $("#addUserModule").click(function() {
-          div = document.createElement('div');
-          $(div).addClass("inner").html("new inner div");
-          $("#schedule-bank").append(div);
-        });
-    });*/
-
-
 });
 
