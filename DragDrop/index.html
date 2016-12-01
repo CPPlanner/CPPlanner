@@ -30,7 +30,6 @@
             Title: {{courseTitle}} <br/>
             Units: {{courseUnits}}
           </div>
-
           <div id="course-bank" class="panel-body">
             <div ng-repeat="module in models.catalogList.Classes[0].modules">
               <table class="module">
@@ -54,6 +53,8 @@
       </div>
 
       <div id="schedule-bank" class="panel-heading">
+        <div class="panel-heading">
+          <h3>Course Planner</h3></div>
                <div ng-repeat="added in models.lists">
               <table class="module">
                 <td>
@@ -68,14 +69,14 @@
                     ng-class="{'selected': models.selected === item}">
                       <div class="clickPointer" ng-click="displayInfo(item)" ng-bind="item.number"></div>
                     </li>
-
-                  <div class="text-right" ng-bind="units(added)"></div>
+                  <div class="text-right module-units" ng-bind="units(added)"></div>
                   </ul>
                 </td>
               </table>
         </div>
       </div>
-      <label class="text-right">Total Units:{{total}}</label>
+      <label class="text-right">Total Units:{{}}</label>
+      <div ng-bind="getTotalUnits()"></div>
       <button class="btn btn-primary center-block" ng-click="addNew()">Add</button>
     </div>
 

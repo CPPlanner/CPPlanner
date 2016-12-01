@@ -22,7 +22,7 @@ app.controller('MainCtrl', function(myService,$scope) {
   $scope.counter = 0;  //TODO find a way to eliminate global counter
   $scope.total = 0;
   $scope.temp = 0;
-  $scope.sumUnits = 0;
+
 
   $scope.models = {
     selected: null,
@@ -44,7 +44,7 @@ app.controller('MainCtrl', function(myService,$scope) {
       $scope.models.catalogList.Classes.push(value);
     });
 
-    console.log($scope.models.catalogList.Classes[0]);
+//    console.log($scope.models.catalogList.Classes[0]);
   });
 
   // Display course information when clicked
@@ -54,10 +54,17 @@ app.controller('MainCtrl', function(myService,$scope) {
       $scope.courseUnits = item.units;
   };
 
-  $scope.addAllUnits = function(sums){
-    $scope.sumUnits += sums;
-    console.log($scope.sumUnits);
+  $scope.getTotalUnits = function() {
+    var sum = 0;
+    $('.module-units').each(function(i, obj) {
+      sum = sum + obj.innerHTML;
+    });
+    $scope.sumUnits += sum;
   };
+
+
+
+
 
     $scope.units = function(array) {
        // console.log(array);
@@ -74,13 +81,12 @@ app.controller('MainCtrl', function(myService,$scope) {
         $scope.sum = sum;*/
 
         var sum = 0;
-        $scope.temp = 0;
+
         if(array)
         {
             for(var i = 0; i < array.length; i++){
                    sum = sum + array[i].units;
-                   $scope.temp = sum;
-                   $scope.addAllUnits($scope.temp);
+                  // $scope.addAllUnits(temp);
             }
         }
         return sum;

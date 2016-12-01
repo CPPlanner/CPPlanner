@@ -12,29 +12,29 @@ html, body {
 }
 
 #wrapper { /* main container */
-    border: 2px solid black;
+/*    border: 2px solid black;*/
     overflow: hidden;
     width: 95%;
     margin: auto;
 }
 
 #catalog-bank { /* container for models coming from school's site */
-    border: 2px solid blue;
+/*    border: 2px solid blue;*/
     width: 50%;
     float:left;
 }
 
 #course-info {
-    border: 2px solid yellow;
+/*    border: 2px solid yellow;*/
     padding: 10px;
 }
 
 #course-bank {
-    border: 2px solid red;
+/*    border: 2px solid red;*/
 }
 
 #schedule-bank { /* container for user-defined models */
-    border: 2px solid green;
+    margin-top: 3.3%;
     width : 50%;
     float: right;
 }
