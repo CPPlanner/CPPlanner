@@ -69,102 +69,18 @@ html, body {
     border: 1px solid gray;
     background-color: #ddd;
 }
-.course.selected {
-    color: white;
+#course.selected {
+    background-color: lightgray;
 }
 
 .list-group-item{
   display: inline-block;
+}
 
+.module-units {
+    float: right;
 }
 
 
 
 
-
-
-
-
-
-
-/**{
-  list-style-type: none;
-}
-.line-content {
-  padding: 0px 5px !important;
-}
-
-td {
-  vertical-align: baseline;
-  padding: 0px !important;
-}
-
-.simpleDemo td {
-  display: table-cell;
-  vertical-align: inherit;
-}
-
-.simpleDemo table {
-  width: 25%;
-  word-break: break-word;
-  font-size: initial;
-  font-family: monospace;
-  tab-size: 4;
-  white-space: pre-wrap;
-  border-spacing: 0px;
-  margin: 0px;
-}
-
-.simpleDemo table {
-  float: left;
-  padding-right: 20px;
-  white-space: normal;
-  line-height: normal;
-  font-weight: normal;
-  font-size: medium;
-  font-style: normal;
-  color: -internal-quirk-inherit;
-  text-align: start;
-  font-variant: normal normal;
-}
-
-.simpleDemo table {
-  display: table;
-  border-collapse: separate;
-  border-spacing: 2px;
-  border-color: grey;
-}
-
-/*.simpleDemo ul[dnd-list],
-.simpleDemo ul[dnd-list] {
-  width: 100%;
-  background-color: bisque;
-}
-
-.simpleDemo ul[dnd-list] {
-  padding-left: 0px;
-}
-
-.simpleDemo ul[dnd-list] .dndDraggingSource {
-  display: none;
-}
-
-.simpleDemo ul[dnd-list] .dndPlaceholder {
-  display: block;
-  min-height: 42px;
-}
-
-.simpleDemo ul[dnd-list] li {
-/*  background-color: gray;
-  border: 1px solid #ddd;
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
-/*  display: block;
-  padding: 10px 15px;
-  margin-bottom: -1px;
-}
-
-.simpleDemo ul[dnd-list] li.selected {
-  background-color: #dff0d8;
-  color: #3c763d;
-}**/

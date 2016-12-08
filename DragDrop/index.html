@@ -42,7 +42,7 @@
             <div layout="column" layout-align="top center">
               <div>
                 <md-button ng-click="toggleLeft()" class="md-primary">
-                  CPPlaner
+                  CPPlanner
                 </md-button>
               </div>
               <div>
@@ -54,6 +54,8 @@
       </div>
 
     <div id="wrapper">
+      
+      <div ng-bind="errorMessage" class="text-warning text-center"></div>
 
       <div id="catalog-bank" class="panel-heading">
         <div id="course-info" >
@@ -101,7 +103,10 @@
                     ng-class="{'selected': models.selected === item}">
                       <div class="clickPointer" ng-click="displayInfo(item)" ng-bind="item.number"></div>
                     </li>
-                  <div class="text-right module-units" ng-bind="units(added)"></div>
+                  </ul>
+                  <ul>
+                      <button ng-click="remove(added)">Remove</button>
+                      <div class="module-units" ng-bind="units(added)"></div>
                   </ul>
                 </td>
               </table>
