@@ -85,21 +85,21 @@ app.controller('MainCtrl', function(myService,$scope) {
       $scope.models.catalogList.Classes.push(value);
     });
   });
-    
+
   // Add new semester box
   $scope.addNew = function() {
       var newArray = [];
       $scope.models.lists.push(newArray);
   };
-    
+
   // Remove existing semester box
   $scope.remove = function(array) {
       $scope.errorMessage = "";
       var index = $scope.models.lists.indexOf(array);
-      
+
       // remove array from list
       if(index > -1) {
-          // make sure array is empty. 
+          // make sure array is empty.
           if(array.length != 0) {
               $scope.errorMessage = "Semester contains courses. Empty container before removing.";
           } else {
@@ -114,7 +114,7 @@ app.controller('MainCtrl', function(myService,$scope) {
       $scope.courseTitle = item.title;
       $scope.courseUnits = item.units;
   };
-    
+
   // Display container units
   $scope.units = function(array) {
       var sum = 0;
@@ -135,6 +135,6 @@ app.controller('MainCtrl', function(myService,$scope) {
       });
       $scope.totalUnits = sum;
   };
-    
+
 });
 

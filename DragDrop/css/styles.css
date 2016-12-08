@@ -6,6 +6,10 @@ html, body {
 *{
   list-style-type: none;
 }
+.print-area a{
+padding-top: 50px;
+text-align: right;
+}
 
 .container .md-button {
   padding: 10-px;
@@ -73,6 +77,7 @@ html, body {
     background-color: #ddd;
 }
 #course.selected {
+/*    color: orangered;*/
     background-color: lightgray;
 }
 
@@ -88,6 +93,7 @@ html, body {
     float: left; 
     margin-right: 5px;
 }
+
 
 
 

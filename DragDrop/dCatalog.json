@@ -164,17 +164,9 @@
         "units": 62,
         "courses": [
           {
-            "id": 8,
-            "number": "CS 210",
-            "title": "Computer Logic",
-            "units": 4,
-            "isGE": false,
-            "geEquivalent": null
-          },
-          {
-            "id": 9,
-            "number": "CS 141",
-            "title": "Introduction to Programming and Problem-Solving",
+            "id": 11,
+            "number": "CS 130",
+            "title": "Discrete Structures",
             "units": 4,
             "isGE": false,
             "geEquivalent": null
@@ -188,9 +180,113 @@
             "geEquivalent": null
           },
           {
-            "id": 11,
-            "number": "CS 130",
-            "title": "Discrete Structures",
+            "id": 9,
+            "number": "CS 141",
+            "title": "Introduction to Programming and Problem-Solving",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 8,
+            "number": "CS 210",
+            "title": "Computer Logic",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 8,
+            "number": "CS 210",
+            "title": "Computer Logic",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 8,
+            "number": "CS 240",
+            "title":"Data Structures and Algorithm I",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 8,
+            "number": "CS 241",
+            "title":"Data Structures and Algorithm II",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 8,
+            "number": "CS 256",
+            "title": "C++ Programming",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 8,
+            "number": "CS 264",
+            "title":"Computer Organization and Assembly Programming",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 8,
+            "number": "CS 311",
+            "title":"Language Translation and Automata",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 8,
+            "number": "CS 331",
+            "title":"Design and Analysis of Algorithms",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 8,
+            "number": "CS 365",
+            "title":"Computer Architecture",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 8,
+            "number": "CS 408",
+            "title":"Programming Languages",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 8,
+            "number": "CS 431",
+            "title":"Operating Systems",
+            "units": 4,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 8,
+            "number": "CS 463",
+            "title":"Undergraduate Seminar",
+            "units": 2,
+            "isGE": false,
+            "geEquivalent": null
+          },
+          {
+            "id": 8,
+            "number": "CS 480",
+            "title":"Software Engineering",
             "units": 4,
             "isGE": false,
             "geEquivalent": null
