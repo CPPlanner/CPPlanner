@@ -50,7 +50,6 @@ app.factory('myService', function($http) {
   var myService = {
     async: function() {
       var promise = $http.get("dCatalog.json").then(function (response) {
-//        console.log(response);
         return response.data;
       });
       return promise;
@@ -66,23 +65,15 @@ app.controller('MainCtrl', function(myService,$scope) {
   $scope.courseNumber;
   $scope.courseTitle;
   $scope.courseUnits;
-  $scope.counter = 0;  //TODO find a way to eliminate global counter
-  $scope.total = 0;
-  $scope.temp = 0;
+  $scope.totalUnits = 0;
+  $scope.errorMessage = "";
 
 
   $scope.models = {
     selected: null,
-    lists: {},
+    lists: [],
     catalogList: {"Classes": []}
   }
-
-  $scope.addNew = function() {
-
-      var newArray = [];
-      $scope.models.lists["Added" + $scope.counter] = newArray;
-      $scope.counter++;
-  };
 
   // Populate course lists
   myService.async().then(function(d) {
@@ -90,9 +81,29 @@ app.controller('MainCtrl', function(myService,$scope) {
     angular.forEach($scope.data,function(value,key){
       $scope.models.catalogList.Classes.push(value);
     });
-
-//    console.log($scope.models.catalogList.Classes[0]);
   });
+    
+  // Add new semester box
+  $scope.addNew = function() {
+      var newArray = [];
+      $scope.models.lists.push(newArray);
+  };
+    
+  // Remove existing semester box
+  $scope.remove = function(array) {
+      $scope.errorMessage = "";
+      var index = $scope.models.lists.indexOf(array);
+      
+      // remove array from list
+      if(index > -1) {
+          // make sure array is empty. 
+          if(array.length != 0) {
+              $scope.errorMessage = "Semester contains courses. Empty container before removing.";
+          } else {
+              $scope.models.lists.splice(index, 1);
+          }
+      }
+  };
 
   // Display course information when clicked
   $scope.displayInfo = function(item) {
@@ -100,31 +111,27 @@ app.controller('MainCtrl', function(myService,$scope) {
       $scope.courseTitle = item.title;
       $scope.courseUnits = item.units;
   };
-
-  $scope.getTotalUnits = function() {
-//    var sum = 0;
-//    $('.module-units').each(function(i, obj) {
-//      sum = sum + obj.innerHTML;
-//    });
-//    $scope.sumUnits += sum;
+    
+  // Display container units
+  $scope.units = function(array) {
+      var sum = 0;
+      if(array) {
+          for(var i=0; i<array.length; i++) {
+              sum = sum + array[i].units;
+          }
+      }
+      updateTotalUnits();
+      return sum;
   };
 
-
-
-
-
-    $scope.units = function(array) {
-
-        var sum = 0;
-
-        if(array)
-        {
-            for(var i = 0; i < array.length; i++){
-                   sum = sum + array[i].units;
-                  // $scope.addAllUnits(temp);
-            }
-        }
-        return sum;
-    };
+  // Update total units
+  var updateTotalUnits = function() {
+      var sum = 0;
+      $('.module-units').each(function(i, obj) {
+         sum = sum + parseInt(obj.innerHTML);
+      });
+      $scope.totalUnits = sum;
+  };
+    
 });
 
