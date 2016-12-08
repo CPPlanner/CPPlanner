@@ -77,8 +77,9 @@
                     dnd-moved="module.courses.splice($index, 1)"
                     dnd-effect-allowed="move"
                     dnd-selected="models.selected = item"
-                    ng-class="{'selected': models.selected === item}">
-                      <div class="clickPointer" ng-click="displayInfo(item)" ng-bind="item.number"></div>
+                    ng-class="{'selected': models.selected === item}"
+                    ng-click="displayInfo(item)">
+                      <div class="clickPointer" ng-bind="item.number"></div>
                     </li>
                   </ul>
                 </td>
@@ -101,15 +102,16 @@
                   <select ng-model="added.selectedSeason" ng-options="season for season in seasons"></select>
                   <select ng-model="added.selectedYear" ng-options="year for year in years"></select>
                   
-                  <ul dnd-list = "added">
+                  <ul class="course-dropdown" dnd-list = "added">
                     <li id="course" class="list-group-item"
                     ng-repeat="item in added"
                     dnd-draggable="item"
                     dnd-moved="added.splice($index, 1)"
                     dnd-effect-allowed="move"
                     dnd-selected="models.selected = item"
-                    ng-class="{'selected': models.selected === item}">
-                      <div class="clickPointer" ng-click="displayInfo(item)" ng-bind="item.number"></div>
+                    ng-class="{'selected': models.selected === item}"
+                    ng-click="displayInfo(item)">
+                      <div class="clickPointer" ng-bind="item.number"></div>
                     </li>
                   </ul>
                   <ul>
