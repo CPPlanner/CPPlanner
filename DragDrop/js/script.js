@@ -65,6 +65,7 @@ app.controller('MainCtrl', function(myService,$scope) {
   $scope.courseNumber;
   $scope.courseTitle;
   $scope.courseUnits;
+  $scope.totalUnits = 0;
   $scope.errorMessage = "";
 
 
@@ -95,7 +96,7 @@ app.controller('MainCtrl', function(myService,$scope) {
       
       // remove array from list
       if(index > -1) {
-          // make sure list is empty. 
+          // make sure array is empty. 
           if(array.length != 0) {
               $scope.errorMessage = "Semester contains courses. Empty container before removing.";
           } else {
@@ -110,15 +111,27 @@ app.controller('MainCtrl', function(myService,$scope) {
       $scope.courseTitle = item.title;
       $scope.courseUnits = item.units;
   };
+    
+  // Display container units
+  $scope.units = function(array) {
+      var sum = 0;
+      if(array) {
+          for(var i=0; i<array.length; i++) {
+              sum = sum + array[i].units;
+          }
+      }
+      updateTotalUnits();
+      return sum;
+  };
 
-    $scope.units = function(array) {
-        var sum = 0;
-        if(array) {
-            for(var i = 0; i < array.length; i++){
-                   sum = sum + array[i].units;
-            }
-        }
-        return sum;
-    };
+  // Update total units
+  var updateTotalUnits = function() {
+      var sum = 0;
+      $('.module-units').each(function(i, obj) {
+         sum = sum + parseInt(obj.innerHTML);
+      });
+      $scope.totalUnits = sum;
+  };
+    
 });
 

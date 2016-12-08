@@ -105,15 +105,14 @@
                     </li>
                   </ul>
                   <ul>
-                      <button ng-click="remove(added)">Remove</button>
+                      <button class="btn btn-primary btn-sm" ng-click="remove(added)">Remove</button>
                       <div class="module-units" ng-bind="units(added)"></div>
                   </ul>
                 </td>
               </table>
         </div>
       </div>
-      <label class="text-right">Total Units:{{}}</label>
-      <div ng-bind="getTotalUnits()"></div>
+      <label class="text-right">Total Units: {{totalUnits}}</label>
       <button class="btn btn-primary center-block" ng-click="addNew()">Add</button>
     </div>
 
