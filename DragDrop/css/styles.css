@@ -61,6 +61,9 @@ html, body {
 .module ul {
     padding: 10px;
 }
+.module td {
+    padding: 10px;
+}
 
 .course {
     display: inline-block;
@@ -79,6 +82,11 @@ html, body {
 
 .module-units {
     float: right;
+}
+
+.semester-title { 
+    float: left; 
+    margin-right: 5px;
 }
 
 

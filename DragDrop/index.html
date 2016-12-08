@@ -5,7 +5,7 @@
   <title>CPPlanner</title>
 
   <!-- load bootstrap and fontawesome via CDN -->
-  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -90,11 +90,16 @@
         <div class="panel-heading">
           <h3>Course Planner</h3></div>
                <div ng-repeat="added in models.lists">
-              <table class="module">
-                <td>
-                <ul dnd-list = "added">
-                  <h6>Semester</h6>
-                  <li id="course" class="list-group-item"
+              <table class="module">  
+                <td>                
+                  <h6 class="semester-title">Semester</h6>
+                  
+                  <!--dropdown options-->
+                  <select ng-model="added.selectedSeason" ng-options="season for season in seasons"></select>
+                  <select ng-model="added.selectedYear" ng-options="year for year in years"></select>
+                  
+                  <ul dnd-list = "added">
+                    <li id="course" class="list-group-item"
                     ng-repeat="item in added"
                     dnd-draggable="item"
                     dnd-moved="added.splice($index, 1)"
@@ -130,6 +135,7 @@
     <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-drag-and-drop-lists/1.4.0/angular-drag-and-drop-lists.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
 
 </body>
